@@ -28,10 +28,22 @@ namespace DotNeuralNet
       }
     }
 
-    public IEnumerable<InputNode> InputNodes { get; }
+    public void Invalidate()
+    {
+      foreach (var n in OutputNodes)
+      {
+        n.Invalidate();
+      }
+      foreach (var n in HiddenNodes)
+      {
+        n.Invalidate();
+      }
+    }
 
-    public IEnumerable<HiddenNode> HiddenNodes { get; }
+    public IList<InputNode> InputNodes { get; private set;  }
 
-    public IEnumerable<OutputNode> OutputNodes { get; }
+    public IList<HiddenNode> HiddenNodes { get; private set; }
+
+    public IList<OutputNode> OutputNodes { get; private set;  }
   }
 }

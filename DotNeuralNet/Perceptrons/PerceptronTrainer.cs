@@ -15,9 +15,9 @@ namespace DotNeuralNet.Perceptrons
 
     public void Train(IEnumerable<PerceptronTrainingRow> rows, double adjust, int rounds)
     {
-      for (var r = 0; r < rounds; r++)
+      foreach (var row in rows)
       {
-        foreach (var row in rows)
+        for (var r = 0; r < rounds; r++)
         {
           RandomizeOrder(row.Inputs);
           for (var i = 0; i < row.Inputs.Length; i++)

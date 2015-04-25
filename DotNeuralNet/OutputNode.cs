@@ -1,34 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace DotNeuralNet
 {
-  public class OutputNode : BaseNode
+  public class OutputNode : WeightedNode
   {
-    private readonly List<BaseNode> _incoming;
-    private readonly Lazy<double> _value;
-
     public OutputNode()
     {
-      _value = new Lazy<double>(GetValue);
-      _incoming = new List<BaseNode>();
+      _activationFunction = Sigmoid;
     }
 
-    public void AddIncoming(BaseNode node)
+    private static double Sigmoid(double value)
     {
-      _incoming.Add(node);
+      if (value < -45.0) return 0.0;
+      else if (value > 45.0) return 1.0;
+
+      return 1.0 / (1.0 + Math.Exp(-value));
     }
 
-    protected internal override double GetValue()
-    {
-      var value = .0;
-      foreach (var n in _incoming)
-      {
-        value += n.GetValue();
-      }
-      return value;
-    }
-
-    public double Value => _value.Value;
+    public double BiasDelta { get; set; }
   }
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>DotNeuralNet</id>
+    <version>0.1.0.0</version>
+    <title>DotNeuralNet</title>
+    <authors>Wolfgang Ziegler</authors>
+    <owners>Wolfgang Ziegler</owners>
+    <licenseUrl>http://opensource.org/licenses/mit-license</licenseUrl>
+    <projectUrl>https://github.com/z1c0/DotNeuralNet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple neural network implementation in .NET / C#</description>
+    <copyright>(c) Wolfgang Ziegler 2015</copyright>
+    <language>en-US</language>
+    <tags>algorithm, machine learning, AI, artificial intelligence</tags>
+  </metadata>
+  <files>
+    <file src="..\DotNeuralNet\Bin\Release\DotNeuralNet.dll" target="lib\portable-net45+win81+wpa81+windows81" />
+  </files>
+</package>

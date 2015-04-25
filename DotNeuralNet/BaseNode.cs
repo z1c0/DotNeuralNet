@@ -2,6 +2,6 @@
 {
   public abstract class BaseNode
   {
-    protected internal abstract double GetValue();
+    public abstract double Value { get; set; }
   }
 }

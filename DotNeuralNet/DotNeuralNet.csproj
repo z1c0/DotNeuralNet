@@ -37,11 +37,16 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackPropagation.cs" />
+    <Compile Include="BackPropagationTrainer.cs" />
+    <Compile Include="BackPropagationTrainingRow.cs" />
+    <Compile Include="BaseNode.cs" />
+    <Compile Include="NodeLink.cs" />
+    <Compile Include="WeightedNode.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="InputNode.cs" />
     <Compile Include="HiddenNode.cs" />
     <Compile Include="OutputNode.cs" />
-    <Compile Include="BaseNode.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Perceptrons\Perceptron.cs" />
     <Compile Include="Perceptrons\PerceptronTrainer.cs" />

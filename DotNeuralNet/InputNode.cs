@@ -2,11 +2,11 @@
 {
   public class InputNode : BaseNode
   {
-    protected internal override double GetValue()
+    public override string ToString()
     {
-      return Value;
+      return Value.ToString();
     }
 
-    public double Value { get; set; }
+    public override double Value { get; set; }
   }
 }

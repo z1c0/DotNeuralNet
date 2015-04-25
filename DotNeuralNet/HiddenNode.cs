@@ -3,28 +3,21 @@ using System.Collections.Generic;
 
 namespace DotNeuralNet
 {
-  public class HiddenNode : BaseNode
+  public class HiddenNode : WeightedNode
   {
-    private readonly List<Tuple<BaseNode, double>> _incoming;
-
-    public HiddenNode()
+    internal HiddenNode()
     {
-      _incoming = new List<Tuple<BaseNode, double>>();
+      _activationFunction = HyperTangens;
     }
 
-    public void AddIncoming(BaseNode node)
+    private static double HyperTangens(double value)
     {
-      _incoming.Add(new Tuple<BaseNode, double>(node, Helpers.GetRandomWeight()));
+      if (value < -45.0) return -1.0;
+      else if (value > 45.0) return 1.0;
+
+      return Math.Tanh(value);
     }
 
-    protected internal override double GetValue()
-    {
-      var value = .0;
-      foreach (var n in _incoming)
-      {
-        value += n.Item1.GetValue() * n.Item2;
-      }
-      return value;
-    }
+    public double BiasDelta { get; set; }
   }
 }

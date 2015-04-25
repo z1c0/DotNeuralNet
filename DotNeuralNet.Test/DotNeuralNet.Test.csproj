@@ -50,8 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BackPropagationTest.cs" />
     <Compile Include="PerceptronTest.cs" />
-    <Compile Include="NetworkTest.cs" />
+    <Compile Include="FeedForwardTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
