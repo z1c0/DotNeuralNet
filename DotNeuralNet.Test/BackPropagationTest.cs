@@ -1,13 +1,12 @@
 ﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using Xunit;
 
 namespace DotNeuralNet.Test
 {
-  [TestClass]
   public class BackPropagationTest
   {
-    [TestMethod]
+    [Fact]
     public void CheckOutputs_NoTraining()
     {
       var network = new Network(3, 4, 2);
@@ -18,11 +17,11 @@ namespace DotNeuralNet.Test
 
       Helper_InitWeights(network);
 
-      Assert.AreEqual(0.50696673, network.OutputNodes[0].Value, 0.00000001);
-      Assert.AreEqual(0.50725216, network.OutputNodes[1].Value, 0.00000001);
+      Assert.Equal(0.50696673, network.OutputNodes[0].Value, 8);
+      Assert.Equal(0.50725216, network.OutputNodes[1].Value, 8);
     }
 
-    [TestMethod]
+    [Fact]
     public void Test_Train_SimpleRow()
     {
       var network = new Network(3, 4, 2);
@@ -33,21 +32,21 @@ namespace DotNeuralNet.Test
       var rows = new[] { new BackPropagationTrainingRow (new [] { 1.0, -2.0, 3.0 }, new [] { 0.1234, 0.8766 }) };
       trainer.Train(rows, 0.5, 10000);
 
-      const double tolerance = 0.00001;
-      Assert.AreEqual(0.07770, network.HiddenNodes[0].Incoming[0].Weight, tolerance);
-      Assert.AreEqual(0.08118, network.HiddenNodes[1].Incoming[0].Weight, tolerance);
-      Assert.AreEqual(0.08441, network.HiddenNodes[2].Incoming[0].Weight, tolerance);
+      const int tolerance = 4;
+      Assert.Equal(0.07770, network.HiddenNodes[0].Incoming[0].Weight, tolerance);
+      Assert.Equal(0.08118, network.HiddenNodes[1].Incoming[0].Weight, tolerance);
+      Assert.Equal(0.08441, network.HiddenNodes[2].Incoming[0].Weight, tolerance);
 
       network.Invalidate();
       for (var i = 0; i < rows[0].Inputs.Length; i++)
       {
         network.InputNodes[i].Value = rows[0].Inputs[i];
       }
-      Assert.AreEqual(rows[0].Outputs[0], network.OutputNodes[0].Value, tolerance);
-      Assert.AreEqual(rows[0].Outputs[1], network.OutputNodes[1].Value, tolerance);
+      Assert.Equal(rows[0].Outputs[0], network.OutputNodes[0].Value, tolerance);
+      Assert.Equal(rows[0].Outputs[1], network.OutputNodes[1].Value, tolerance);
     }
 
-    [TestMethod]
+    [Fact]
     public void Test_LargeNet_ManyRows()
     {
       //var network = new Network(10 * 10, 8 * 8, 10);

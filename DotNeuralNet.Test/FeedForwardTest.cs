@@ -1,12 +1,11 @@
 ﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace DotNeuralNet.Test
 {
-  [TestClass]
   public class FeedForwardTest
   {
-    [TestMethod]
+    [Fact]
     public void Test_SimpleNetwork()
     {
       var network = new Network(3, 2, 1);
@@ -28,7 +27,7 @@ namespace DotNeuralNet.Test
       network.OutputNodes[0].Incoming[0].Weight = 0.3;
       network.OutputNodes[0].Incoming[1].Weight = 0.4;
 
-      Assert.AreEqual(0.72, network.OutputNodes[0].Value, 0.01);
+      Assert.Equal(0.72, network.OutputNodes[0].Value, 2);
     }
   }
 }

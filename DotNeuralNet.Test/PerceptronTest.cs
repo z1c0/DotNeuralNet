@@ -1,13 +1,12 @@
 ﻿using System.Runtime.InteropServices;
 using DotNeuralNet.Perceptrons;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace DotNeuralNet.Test
 {
-  [TestClass]
   public class PerceptronTest
   {
-    [TestMethod]
+    [Fact]
     public void TestLogicalAnd()
     {
       var perceptron = new Perceptron(2);
@@ -19,22 +18,22 @@ namespace DotNeuralNet.Test
       // 0 & 0 -> 0
       perceptron.Inputs[0] = 0;
       perceptron.Inputs[1] = 0;
-      Assert.AreEqual(0, perceptron.Output);
+      Assert.Equal(0, perceptron.Output);
       // 0 & 1 -> 0
       perceptron.Inputs[0] = 0;
       perceptron.Inputs[1] = 1;
-      Assert.AreEqual(0, perceptron.Output);
+      Assert.Equal(0, perceptron.Output);
       // 1 & 0 -> 0
       perceptron.Inputs[0] = 1;
       perceptron.Inputs[1] = 0;
-      Assert.AreEqual(0, perceptron.Output);
+      Assert.Equal(0, perceptron.Output);
       // 1 & 1 -> 0
       perceptron.Inputs[0] = 1;
       perceptron.Inputs[1] = 1;
-      Assert.AreEqual(1, perceptron.Output);
+      Assert.Equal(1, perceptron.Output);
     }
 
-    [TestMethod]
+    [Fact]
     public void TestLogicalOr()
     {
       var perceptron = new Perceptron(2);
@@ -46,22 +45,22 @@ namespace DotNeuralNet.Test
       // 0 & 0 -> 0
       perceptron.Inputs[0] = 0;
       perceptron.Inputs[1] = 0;
-      Assert.AreEqual(0, perceptron.Output);
+      Assert.Equal(0, perceptron.Output);
       // 0 & 1 -> 0
       perceptron.Inputs[0] = 0;
       perceptron.Inputs[1] = 1;
-      Assert.AreEqual(1, perceptron.Output);
+      Assert.Equal(1, perceptron.Output);
       // 1 & 0 -> 0
       perceptron.Inputs[0] = 1;
       perceptron.Inputs[1] = 0;
-      Assert.AreEqual(1, perceptron.Output);
+      Assert.Equal(1, perceptron.Output);
       // 1 & 1 -> 0
       perceptron.Inputs[0] = 1;
       perceptron.Inputs[1] = 1;
-      Assert.AreEqual(1, perceptron.Output);
+      Assert.Equal(1, perceptron.Output);
     }
 
-    [TestMethod]
+    [Fact]
     public void TestTrainingBounce()
     {
       var perceptron = new Perceptron(2);
@@ -86,10 +85,10 @@ namespace DotNeuralNet.Test
 
       perceptron.Inputs[0] = 2.0;
       perceptron.Inputs[1] = 2.0;
-      Assert.AreEqual(0, perceptron.Output);
+      Assert.Equal(0, perceptron.Output);
       perceptron.Inputs[0] = 7.0;
       perceptron.Inputs[1] = 6.0;
-      Assert.AreEqual(1, perceptron.Output);
+      Assert.Equal(1, perceptron.Output);
     }
   }
 }

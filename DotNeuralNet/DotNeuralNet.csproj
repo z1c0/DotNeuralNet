@@ -1,64 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9C7C0F6-0DCD-44CB-9E3A-4F12218E9E9B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DotNeuralNet</RootNamespace>
-    <AssemblyName>DotNeuralNet</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile344</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>DotNeuralNet</PackageId>
+    <Version>0.4.1</Version>
+    <Authors>Wolfgang Ziegler</Authors>
+    <Copyright>Copyright (c) Wolfgang Ziegler 2022</Copyright>
+    <Description>A simple neural network implementation in .NET and C#</Description>
+    <PackageProjectUrl>https://github.com/z1c0/DotNeuralNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/z1c0/DotNeuralNet</RepositoryUrl>
+    <RespositoryType>git</RespositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BackPropagation.cs" />
-    <Compile Include="BackPropagationTrainer.cs" />
-    <Compile Include="BackPropagationTrainingRow.cs" />
-    <Compile Include="BaseNode.cs" />
-    <Compile Include="NodeLink.cs" />
-    <Compile Include="WeightedNode.cs" />
-    <Compile Include="Helpers.cs" />
-    <Compile Include="InputNode.cs" />
-    <Compile Include="HiddenNode.cs" />
-    <Compile Include="OutputNode.cs" />
-    <Compile Include="Network.cs" />
-    <Compile Include="Perceptrons\Perceptron.cs" />
-    <Compile Include="Perceptrons\PerceptronTrainer.cs" />
-    <Compile Include="Perceptrons\PerceptronTrainingRow.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
