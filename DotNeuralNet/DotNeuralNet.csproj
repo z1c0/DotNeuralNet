@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/z1c0/DotNeuralNet</RepositoryUrl>
     <RespositoryType>git</RespositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>algorithm, machine learning, AI, artificial intelligence</PackageTags>
   </PropertyGroup>
 
 </Project>
