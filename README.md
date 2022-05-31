@@ -2,4 +2,4 @@
 
 A simple neural network implementation in .NET / C#
 
-![NuGet Badge](https://img.shields.io/nuget/dt/DotNeuralNet?style=for-the-badge)
+[![NuGet Badge](https://img.shields.io/nuget/dt/DotNeuralNet?style=for-the-badge)](https://www.nuget.org/packages/DotNeuralNet/)
