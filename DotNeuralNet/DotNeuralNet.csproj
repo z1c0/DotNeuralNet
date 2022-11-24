@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>DotNeuralNet</PackageId>
-    <Version>0.4.1</Version>
+    <Version>0.4.2</Version>
     <Authors>Wolfgang Ziegler</Authors>
     <Copyright>Copyright (c) Wolfgang Ziegler 2022</Copyright>
     <Description>A simple neural network implementation in .NET and C#</Description>
